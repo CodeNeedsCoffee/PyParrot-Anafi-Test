@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{e55be7d8-c0a8-4b5d-885f-e936832aef33}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>examples\AnafiFlyingTest.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <IsWindowsApplication>False</IsWindowsApplication>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="coursework\droneMapGUI.py" />
+    <Compile Include="docs\conf.py" />
+    <Compile Include="examples\AnafiFlyingTest.py" />
+    <Compile Include="examples\demoBebopDirectFlight.py" />
+    <Compile Include="examples\demoBebopIndoors.py" />
+    <Compile Include="examples\demoBebopTricks.py" />
+    <Compile Include="examples\demoBebopVision.py" />
+    <Compile Include="examples\demoBebopVisionGUI.py" />
+    <Compile Include="examples\demoMamboClaw.py" />
+    <Compile Include="examples\demoMamboDirectFlight.py" />
+    <Compile Include="examples\demoMamboGroundcam.py" />
+    <Compile Include="examples\demoMamboGun.py" />
+    <Compile Include="examples\demoMamboTricks.py" />
+    <Compile Include="examples\demoMamboVision.py" />
+    <Compile Include="examples\demoMamboVisionGUI.py" />
+    <Compile Include="examples\demoSwingDirectFlight.py" />
+    <Compile Include="examples\demoSwingJoystick.py" />
+    <Compile Include="pyparrot\Anafi.py" />
+    <Compile Include="pyparrot\Bebop.py" />
+    <Compile Include="pyparrot\commandsandsensors\DroneCommandParser.py" />
+    <Compile Include="pyparrot\commandsandsensors\DroneSensorParser.py" />
+    <Compile Include="pyparrot\commandsandsensors\__init__.py" />
+    <Compile Include="pyparrot\DroneVision.py" />
+    <Compile Include="pyparrot\DroneVisionGUI.py" />
+    <Compile Include="pyparrot\images\__init__.py" />
+    <Compile Include="pyparrot\Minidrone.py" />
+    <Compile Include="pyparrot\networking\bleConnection.py" />
+    <Compile Include="pyparrot\networking\wifiConnection.py" />
+    <Compile Include="pyparrot\networking\__init__.py" />
+    <Compile Include="pyparrot\scripts\findMinidrone.py" />
+    <Compile Include="pyparrot\scripts\__init__.py" />
+    <Compile Include="pyparrot\utils\colorPrint.py" />
+    <Compile Include="pyparrot\utils\NonBlockingStreamReader.py" />
+    <Compile Include="pyparrot\utils\vlc.py" />
+    <Compile Include="pyparrot\utils\__init__.py" />
+    <Compile Include="pyparrot\VisionServer.py" />
+    <Compile Include="pyparrot\__init__.py" />
+    <Compile Include="setup.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="coursework" />
+    <Folder Include="docs" />
+    <Folder Include="examples" />
+    <Folder Include="pyparrot" />
+    <Folder Include="pyparrot\commandsandsensors" />
+    <Folder Include="pyparrot\images" />
+    <Folder Include="pyparrot\networking" />
+    <Folder Include="pyparrot\scripts" />
+    <Folder Include="pyparrot\utils" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
