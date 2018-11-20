@@ -14,7 +14,7 @@ success = Anafi.connect(10)
 print(success)
 
 print("sleeping")
-Anafi.smart_sleep(5)
+#Anafi.smart_sleep(5)
 
 Anafi.ask_for_state_update()
 
@@ -40,9 +40,13 @@ Anafi.safe_takeoff(5)
 
 # this works but requires a larger test space than I currently have. Uncomment with care and test only in large spaces!
 #print("Flying direct: going around in a circle (yes you can mix roll, pitch, yaw in one command!)")
-#Anafi.fly_direct(roll=25, pitch=0, yaw=50, vertical_movement=0, duration=5)
+#Anafi.fly_direct(ro
+#
+Anafi.fly_direct(roll=0, pitch=-25, yaw=0, vertical_movement=50, duration=2)
+Anafi.fly_direct(roll=0, pitch=50, yaw=0, vertical_movement=0, duration=2)
 
-Anafi.smart_sleep(1)
+Anafi.smart_sleep(5)
+Anafi.fly_direct(roll=0, pitch=0, yaw=50, vertical_movement=0, duration=5)
 Anafi.safe_land(5)
 
 print("DONE - disconnecting")

@@ -45,7 +45,7 @@ class WifiConnection:
         """
         self.is_connected = False
         if (drone_type not in ("Bebop", "Bebop2", "Mambo","Anafi")):
-            color_print("Error: only type Bebop and Mambo are currently supported", "ERROR")
+            color_print("Error: only type Anafi, Bebop and Mambo are currently supported", "ERROR")
             return
 
         self.drone = drone
@@ -68,8 +68,8 @@ class WifiConnection:
         elif (drone_type == "Mambo"):
             self.mdns_address = "_arsdk-090b._udp.local."
         elif (drone_type == "Anafi"):
-            self.mdns_address = "_arsdk-0901._udp.local."
-            #Bebop video streaming
+            self.mdns_address = "_arsdk-0914._udp.local."
+            #Anafi video streaming
             self.stream_port = 55004
             self.stream_control_port = 55005
 
@@ -331,7 +331,7 @@ class WifiConnection:
             data = tcp_sock.recv(4096).decode('utf-8')
             if (len(data) > 0):
                 my_data = data[0:-1]
-                self.udp_data = json.loads(str(my_data))
+                self.udp_data = json.loads(str(my_data) + "}")
 
                 # if the drone refuses the connection, return false
                 if (self.udp_data['status'] != 0):
