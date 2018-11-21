@@ -43,10 +43,18 @@ Anafi.safe_takeoff(5)
 #Anafi.fly_direct(ro
 #
 Anafi.fly_direct(roll=0, pitch=-25, yaw=0, vertical_movement=50, duration=2)
-Anafi.fly_direct(roll=0, pitch=50, yaw=0, vertical_movement=0, duration=2)
+Anafi.fly_direct(roll=0, pitch=50, yaw=0, vertical_movement=0, duration=1.5)
 
 Anafi.smart_sleep(5)
-Anafi.fly_direct(roll=0, pitch=0, yaw=50, vertical_movement=0, duration=5)
+Anafi.fly_direct(roll=-0, pitch=-0, yaw=0, vertical_movement=0, duration=1)
+
+Anafi.fly_direct(roll=-25, pitch=-82, yaw=0, vertical_movement=0, duration=2)
+Anafi.fly_direct(roll=0, pitch=-10, yaw=0, vertical_movement=-50, duration=2)
+
+#Anafi.fly_direct(roll=15, pitch=0, yaw=0, vertical_movement=0, duration=2)
+#Anafi.fly_direct(roll=-25, pitch=0, yaw=0, vertical_movement=0, duration=2)
+#Anafi.fly_direct(roll=0, pitch=10, yaw=50, vertical_movement=0, duration=2)
+
 Anafi.safe_land(5)
 
 print("DONE - disconnecting")
