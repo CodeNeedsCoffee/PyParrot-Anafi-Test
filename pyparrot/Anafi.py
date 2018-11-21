@@ -447,6 +447,30 @@ class Anafi():
         while (not self.sensors.RelativeMoveEnded):
             self.smart_sleep(0.01)
 
+    def take_picture(self):
+        """
+        Ask the drone to take a picture also checks how many frames are on there, if there are ore than 35 it deletes one
+        If connected via Wifi it
+        If it is connected via WiFi it also deletes all frames on the Mambo once there are more than 35,
+        since after there are 40 the next ones are ignored
+        :return: True if the command was sent and False otherwise
+        """
+       # if self.use_wifi:
+       #     list = self.groundcam.get_groundcam_pictures_names()
+       #     if len(list) > 35: #if more than 35 pictures on the Mambo delete all
+       #         print("deleting")
+       #         for file in list:
+       #             self.groundcam._delete_file(file)
+
+       # command_tuple = self.command_parser.get_command_tuple("minidrone", "MediaRecord", "PictureV2")
+       # return self.drone_connection.send_noparam_command_packet_ack(command_tuple)
+
+        command_tuple = self.command_parser.get_command_tuple("ardrone3", "MediaRecord", "Picture")
+        return self.drone_connection.send_noparam_command_packet_ack(command_tuple)
+
+        #param_tuple = [1] # Enable
+        #param_type_tuple = ['u8']
+        #self.drone_connection.send_param_command_packet(command_tuple,param_tuple,param_type_tuple)
 
     def start_video_stream(self):
         """

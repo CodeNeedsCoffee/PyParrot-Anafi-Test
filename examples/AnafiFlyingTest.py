@@ -18,8 +18,6 @@ print("sleeping")
 
 Anafi.ask_for_state_update()
 
-Anafi.safe_takeoff(5)
-
 #print("Flying direct: going forward (positive pitch)")
 #Anafi.fly_direct(roll=0, pitch=50, yaw=0, vertical_movement=0, duration=1)
 
@@ -42,20 +40,38 @@ Anafi.safe_takeoff(5)
 #print("Flying direct: going around in a circle (yes you can mix roll, pitch, yaw in one command!)")
 #Anafi.fly_direct(ro
 #
-Anafi.fly_direct(roll=0, pitch=-25, yaw=0, vertical_movement=50, duration=2)
-Anafi.fly_direct(roll=0, pitch=50, yaw=0, vertical_movement=0, duration=1.5)
 
-Anafi.smart_sleep(5)
-Anafi.fly_direct(roll=-0, pitch=-0, yaw=0, vertical_movement=0, duration=1)
+try:
+    print("TAKE OFF")
+    Anafi.safe_takeoff(5)
 
-Anafi.fly_direct(roll=-25, pitch=-82, yaw=0, vertical_movement=0, duration=2)
-Anafi.fly_direct(roll=0, pitch=-10, yaw=0, vertical_movement=-50, duration=2)
+    #Anafi.start_video_stream()
+    print("UP")
+    Anafi.fly_direct(roll=0, pitch=-15, yaw=0, vertical_movement=75, duration=2)
+    #Anafi.fly_direct(roll=0, pitch=25, yaw=0, vertical_movement=0, duration=1.5)
 
-#Anafi.fly_direct(roll=15, pitch=0, yaw=0, vertical_movement=0, duration=2)
-#Anafi.fly_direct(roll=-25, pitch=0, yaw=0, vertical_movement=0, duration=2)
-#Anafi.fly_direct(roll=0, pitch=10, yaw=50, vertical_movement=0, duration=2)
+    print("WAIT")
+    Anafi.smart_sleep(5)
 
-Anafi.safe_land(5)
+    # print("FORMAT")
+    # set_picture_format()
+    print("PICTURE")
+    Anafi.take_picture()
+    
+    #Anafi.fly_direct(roll=-0, pitch=-0, yaw=0, vertical_movement=0, duration=1)
 
+    #Anafi.fly_direct(roll=-5, pitch=-45, yaw=0, vertical_movement=0, duration=2)
+    print("DOWN")
+    Anafi.fly_direct(roll=0, pitch=-15, yaw=0, vertical_movement=-25, duration=2)
+    #Anafi.stop_video_stream() 
+
+    #Anafi.fly_direct(roll=15, pitch=0, yaw=0, vertical_movement=0, duration=2)
+    #Anafi.fly_direct(roll=-25, pitch=0, yaw=0, vertical_movement=0, duration=2)
+    #Anafi.fly_direct(roll=0, pitch=10, yaw=50, vertical_movement=0, duration=2)
+    print("PASSED")
+    Anafi.safe_land(5)
+except:
+    print("FAILED")
+    Anafi.safe_land(5)
 print("DONE - disconnecting")
 Anafi.disconnect()
